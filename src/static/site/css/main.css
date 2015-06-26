@@ -70,7 +70,7 @@ body>.navbar-transparent {
 /* Home page styling */
 .corporate-jumbo {
     background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
-      url("/static/site/img/banner.jpg");
+      url("/static/site/img/banner-02.jpg");
     background-repeat: no-repeat;
     background-position: 80% center;
     background-attachment: fixed;
@@ -120,7 +120,7 @@ body>.navbar-transparent {
 .services-section {
   background: #FAFAFA;
   text-align: center;
-  padding: 0px 0;
+  padding: 40px 0;
 }
 .services-section .row.row-padding {
   padding-top: 40px;
@@ -284,15 +284,6 @@ body>.navbar-transparent {
 .side-nav ul.nav-side-nav > li > a:hover, .side-nav ul.nav-side-nav > li > a:focus {
   background: #afafaf;
   text-decoration: none;
-}
-
-.services-section {
-  background: #FAFAFA;
-  text-align: center;
-  padding: 0px 0;
-}
-.services-section .row.row-padding {
-  padding-top: 40px;
 }
 
 .features-section {
