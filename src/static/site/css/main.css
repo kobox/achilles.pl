@@ -166,7 +166,7 @@ body>.navbar-transparent {
   margin-bottom: 31px;
 }
 .packaging-section {
-  background: green url('/static/site/img/products-bg.png');
+  background: url('/static/site/img/seamless_paper_texture.png');
   text-align: left;
   padding: 50px 0;
 }
@@ -182,7 +182,7 @@ body>.navbar-transparent {
 
 /* About page styling */
 #sec1 {
-    background:url("/static/site/img/uszlachetnianie-druku.jpg") no-repeat;
+    background:url("/static/site/img/desk.jpg") no-repeat;
     background-size: cover;
 }
 
