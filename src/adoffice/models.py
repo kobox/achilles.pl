@@ -3,6 +3,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 # Create your models here.
 
+
 class Category(models.Model):
 
     slug = models.SlugField(max_length=50)
@@ -30,6 +31,7 @@ class Product(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
     category = models.ManyToManyField(Category, blank=True, null=True)
+    group_category = models.ManyToManyField(GroupCategory, blank=True, null=True)
 
     def __unicode__(self):
         return self.title
@@ -51,3 +53,7 @@ class ProductImage(models.Model):
 
     def __unicode__(self):
         return self.product.title
+
+
+class GroupCategory(models.Model):
+    title = models.CharField(max_length=254)
