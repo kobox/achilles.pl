@@ -30,7 +30,6 @@
         <h2>{{ category.title }}</h2>
         <p class="lead">
 
-
          </p>
       </div>
     </div>
@@ -55,14 +54,14 @@
 <h2>Przykładowe Realizacje</h2>
 <!-- Projects Row -->
 <div class="row">
-{% if category.products.all %}
-        {% for s in category.products.all %}
+{% if product_list %}
+        {% for p in product_list %}
             <div class="col-md-3 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="{{ s.slug }}">{{ s.title }}</a>
+                    <a href="{{ p.slug }}">{{ p.title }}</a>
                 </h3>
             </div>
         {% endfor %}
