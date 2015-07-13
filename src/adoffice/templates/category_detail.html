@@ -12,7 +12,7 @@
 <!-- Benefits of the Django application -->
 {% block container %}
 
-<div id="sec1" class="text-page">
+<div id="{{ category.header }}" class="text-page">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -58,7 +58,7 @@
         {% for p in product_list %}
             <div class="col-md-3 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                    <img class="img-responsive" src="{{ p.picture.url }}" alt="">
                 </a>
                 <h3>
                     <a href="{{ p.slug }}">{{ p.title }}</a>

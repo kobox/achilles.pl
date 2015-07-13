@@ -58,9 +58,9 @@
             </tbody>
             </table>
             <div class="product-nav">
-               <a href="" id="product-prev"><-</a>
+               <a href="{{ product.get_previous_by_timestamp.get_absolute_url }}" id="product-prev"><-</a>
                 <div class="product-gallery"></div>
-               <a href="" id="product-next">-></a>
+               <a href="{{ product.get_next_by_timestamp.get_absolute_url }}" id="product-next">-></a>
             </div>
             </div>
 <div class="col-lg-9">

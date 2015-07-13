@@ -4,7 +4,7 @@ from .models import Category, GroupCategory, Product, ProductImage
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'title', 'slug', 'heroimage',)
+    list_display = ('__unicode__', 'title', 'slug', 'header',)
 
     model = Category
 

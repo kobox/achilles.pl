@@ -10,7 +10,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^about/$', views.AboutPage.as_view(), name='about'),
-    url(r'^product/$', views.ProductPage.as_view(), name='product'),
+    #url(r'^product/$', views.ProductPage.as_view(), name='product'),
     url(r'^biuro/', include(adoffice.urls, namespace='adoffice')),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
