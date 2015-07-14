@@ -1,6 +1,7 @@
 from django.views import generic
 from adoffice.models import Category
 
+
 class HomePage(generic.TemplateView):
     template_name = "home.html"
 

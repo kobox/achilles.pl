@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, GroupCategory, Product, ProductImage
+from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories
 
 
 @admin.register(Category)
@@ -14,7 +14,17 @@ class GroupCategoryAdmin(admin.ModelAdmin):
 
     model = GroupCategory
 
+@admin.register(Finishing)
+class FinishingAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'title',)
 
+    model = Finishing
+
+@admin.register(Accessories)
+class FinishingAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'title',)
+
+    model = Accessories
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):

@@ -30,14 +30,31 @@ class GroupCategory(models.Model):
         return self.title
 
 
+class Finishing(models.Model):
+    title = models.CharField(max_length=254)
+
+    def __unicode__(self):
+        return self.title
+
+
+class Accessories(models.Model):
+    title = models.CharField(max_length=254)
+
+    def __unicode__(self):
+        return self.title
+
+
 class Product(models.Model):
     title = models.CharField(max_length=254)
     slug = models.SlugField(max_length=150, unique=True)
     description = models.TextField('Opis', blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+    format_size = models.CharField(max_length=10, blank=True)
     category = models.ManyToManyField(Category, blank=True, null=True)
     group_category = models.ManyToManyField(GroupCategory, blank=True, null=True)
+    finishing = models.ManyToManyField(Finishing, blank=True, null=True)
+    accessories = models.ManyToManyField(Accessories, blank=True, null=True)
     picture = models.ImageField('Obrazek', default='pics/default.png', upload_to='pics/',
                                 blank=False, null=False)
 
@@ -63,7 +80,16 @@ class ProductImage(models.Model):
         return self.product.title
 
 
+class Quota(models.Model):
+    email = models.EmailField()
+    full_name = models.CharField('Imię i Nazwisko', max_length=254, default='', blank=False, null=False)
+    company = models.CharField('Firma', max_length=254, default='', blank=True, null=True)
+    phone = models.CharField('Telefon', max_length=254, default='')
+    note = models.TextField('Uwagi', default='', blank=True, null=True)
+    newsletter = models.BooleanField('Newsletter', default=True, help_text='Chcę być informowany o nowościach i ofertach firmy Achilles.')
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
-
+    def __unicode__(self):
+        return self.email
 
 
