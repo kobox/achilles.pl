@@ -34,7 +34,7 @@ class ProductDetailView(DetailView):
         return context
 
 
-def add_signup(request):
+def add_quote(request):
     # Get the context from the request.
     context = RequestContext(request)
 
