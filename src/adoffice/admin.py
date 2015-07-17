@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories
+from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories, Quota
 
 
 @admin.register(Category)
@@ -37,3 +37,9 @@ class ProductImageAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'picture',)
 
     model = ProductImage
+
+@admin.register(Quota)
+class QuotaAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'timestamp',)
+
+    model = Quota

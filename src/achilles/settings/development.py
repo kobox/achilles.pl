@@ -12,9 +12,9 @@ if "celery" in sys.argv[0]:
     DEBUG = False
 
 # Django Debug Toolbar
-INSTALLED_APPS += (
-    'debug_toolbar.apps.DebugToolbarConfig',)
-
+#INSTALLED_APPS += (
+#    'debug_toolbar.apps.DebugToolbarConfig',)
+#DEBUG_TOOLBAR_CONFIG = {'JQUERY_URL': ''}
 # Show emails to console in DEBUG mode
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

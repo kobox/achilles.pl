@@ -3,7 +3,8 @@ from django.views.generic.detail import SingleObjectMixin
 from .models import Category, Product, ProductImage
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-
+from fm.views import AjaxCreateView
+from .forms import SignUpForm
 
 class CategoryDetail(SingleObjectMixin, ListView):
     paginate_by = 2
@@ -23,6 +24,7 @@ class CategoryDetail(SingleObjectMixin, ListView):
 class ProductDetailView(DetailView):
     template_name = "product_detail.html"
     model = Product
+
     #context_object_name = 'product'
     #def get(self, request, *args, **kwargs):
     #    self.object = self.get_object(queryset=Product.objects.all())
@@ -32,6 +34,10 @@ class ProductDetailView(DetailView):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product_images'] = ProductImage.objects.filter(product=self.get_object())
         return context
+
+
+class TestView(AjaxCreateView):
+    form_class = SignUpForm
 
 
 def add_quote(request):
