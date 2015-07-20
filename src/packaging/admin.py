@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories, Quota, Segment
+from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories, Quota
 
 
 @admin.register(Category)
@@ -43,9 +43,3 @@ class QuotaAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'timestamp',)
 
     model = Quota
-
-@admin.register(Segment)
-class SegmentAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'title',)
-
-    model = Segment

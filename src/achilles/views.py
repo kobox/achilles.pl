@@ -1,5 +1,6 @@
 from django.views import generic
 from adoffice.models import Category
+from packaging.models import Category as PackagingCategory
 
 
 class HomePage(generic.TemplateView):
@@ -7,7 +8,8 @@ class HomePage(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        context['office'] = Category.objects.filter(active=True).order_by('order')
+        context['office'] = Category.objects.filter(active=True, segment=1).order_by('order')
+        context['packaging'] = Category.objects.filter(active=True, segment=2).order_by('order')
         return context
 
 

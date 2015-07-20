@@ -35,13 +35,6 @@ class MetaData(models.Model):
         return self._meta_title or str(self)
 
 
-class Segment(models.Model):
-    title = models.CharField(max_length=254)
-
-    def __unicode__(self):
-        return self.title
-
-
 class Category(MetaData):
 
     slug = models.SlugField(max_length=50)
@@ -54,7 +47,6 @@ class Category(MetaData):
     header = models.CharField('Klasa obrazka', max_length=50, default='sec1', blank=True, null=True)
     order = models.IntegerField(default=0, blank=False, null=False)
     parent_category = models.ForeignKey('self', blank=True, null=True, related_name="subcategories")
-    segment = models.ForeignKey(Segment, default='1', blank=False, null=False)
     #products = models.ManyToManyField(Product, blank=True, null=True)
 
     def __unicode__(self):

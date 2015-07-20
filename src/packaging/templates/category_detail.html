@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}About{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div id="{{ category.header }}" class="text-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>{% include "_brandname.html" %}</h1>
+        <p class="lead">An Awesome Tagline Goes Here</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec2" class="text-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>{{ category.title }}</h2>
+        <p class="lead">
+
+         </p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+    <section class="services-section" id="section-1">
+
+      <div class="container">
+
+        <div class="row">
+            <div class="panel">
+
+                {{ category.description|safe }}
+
+            </div>
+        </div>
+      </div>
+    </section>
+<section class="office-section">
+<div class="container">
+<h2>Przykładowe Realizacje</h2>
+<!-- Projects Row -->
+<div class="row">
+{% if product_list %}
+        {% for p in product_list %}
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="{{ p.picture.url }}" alt="">
+                </a>
+                <h3>
+                    <a href="{{ p.slug }}">{{ p.title }}</a>
+                </h3>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    </div></div>
+</section>
+</div>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}
