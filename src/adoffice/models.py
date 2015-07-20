@@ -1,10 +1,41 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils.html import strip_tags
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext, ugettext_lazy as _
 # Create your models here.
 
 
-class Category(models.Model):
+class MetaData(models.Model):
+    """
+    Abstract model that provides meta data for content.
+    """
+
+    _meta_title = models.CharField(_("Title"), null=True, blank=True,
+                                   max_length=500, help_text=_("Optional title to be used in the HTML title tag. "
+                                                               "If left blank, the main title field will be used."))
+    meta_description = models.TextField(_("Description"), blank=True)
+    keywords = models.CharField(max_length=500, blank=True, null=True)
+
+    class Meta:
+        abstract = True
+
+    def save(self, *args, **kwargs):
+        """
+        Set the description field on save.
+        """
+        self.meta_description = strip_tags(self.meta_description)
+        super(MetaData, self).save(*args, **kwargs)
+
+    def meta_title(self):
+        """
+        Accessor for the optional ``_meta_title`` field, which returns
+        the string version of the instance if not provided.
+        """
+        return self._meta_title or str(self)
+
+
+class Category(MetaData):
 
     slug = models.SlugField(max_length=50)
     title = models.CharField('Tytuł', default='', max_length=254, blank=False, null=False)
@@ -44,7 +75,7 @@ class Accessories(models.Model):
         return self.title
 
 
-class Product(models.Model):
+class Product(MetaData):
     title = models.CharField(max_length=254)
     slug = models.SlugField(max_length=150, unique=True)
     description = models.TextField('Opis', blank=True, null=True)
