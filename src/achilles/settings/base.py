@@ -15,7 +15,9 @@ BASE_DIR = dirname(dirname(dirname(__file__)))
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 MEDIA_ROOT = join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
-
+LOCALE_PATHS = (
+    join(BASE_DIR, 'locale'),
+)
 # Use Django templates using the new Django 1.8 TEMPLATES settings
 TEMPLATES = [
     {
@@ -65,6 +67,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'modeltranslation',
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -87,6 +90,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -110,8 +114,11 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'pl'
+LANGUAGES = (
+    ('pl', 'Polish'),
+    ('en', 'English'),
+)
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

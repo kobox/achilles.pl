@@ -7,17 +7,20 @@ import accounts.urls
 import adoffice.urls
 import packaging.urls
 from . import views
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+
+urlpatterns = i18n_patterns(
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^about/$', views.AboutPage.as_view(), name='about'),
     #url(r'^product/$', views.ProductPage.as_view(), name='product'),
     url(r'^katalog/', include(adoffice.urls, namespace='adoffice')),
-   # url(r'^opakowania/', include(packaging.urls, namespace='packaging')),
+    # url(r'^opakowania/', include(packaging.urls, namespace='packaging')),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
-]
+    #url(r'^i18n/', include('django.conf.urls.i18n')),
+)
 
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
