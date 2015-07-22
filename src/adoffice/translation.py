@@ -6,11 +6,11 @@ from .models import Category, GroupCategory, Product
 
 
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'slug', 'description')
+    fields = ('title', 'slug', 'description', 'meta_description', 'keywords')
 
 
 class ProductTranslationOptions(TranslationOptions):
-    fields = ('title', 'slug', 'description')
+    fields = ('title', 'slug', 'description', 'meta_description', 'keywords')
 
 
 class GroupCategoryTranslationOptions(TranslationOptions):
