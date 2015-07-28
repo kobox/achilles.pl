@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-21 14:43+0200\n"
+"POT-Creation-Date: 2015-07-28 10:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,61 +18,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:14
-msgid "Tytuł sekcji meta"
-msgstr ""
-
 #: models.py:15
+msgid "Tytuł sekcji meta"
+msgstr "meta title"
+
+#: models.py:16
 msgid "Opcjonalny HTML title tag."
 msgstr ""
 
-#: models.py:16
+#: models.py:17
 msgid "Opis sekcji meta"
-msgstr ""
+msgstr "meta desc"
 
-#: models.py:47
+#: models.py:50
 msgid "Tytuł"
-msgstr ""
+msgstr "Title"
 
-#: models.py:50 models.py:88
+#: models.py:54 models.py:102
 msgid "Opis"
-msgstr ""
+msgstr "Description"
 
-#: models.py:51
+#: models.py:55
 msgid "Kategoria"
-msgstr ""
+msgstr "Cateogry"
 
-#: models.py:53
+#: models.py:57
 msgid "Klasa obrazka"
-msgstr ""
+msgstr "Picture class"
 
-#: models.py:96 models.py:111
+#: models.py:110 models.py:140
 msgid "Obrazek"
-msgstr ""
+msgstr "Picture"
 
-#: models.py:123
+#: models.py:152
 msgid "Imię i Nazwisko"
-msgstr ""
+msgstr "Full Name"
 
-#: models.py:124
+#: models.py:153
 msgid "Firma"
-msgstr ""
+msgstr "Company"
 
-#: models.py:125
+#: models.py:154
 msgid "Telefon"
-msgstr ""
+msgstr "Phone"
 
-#: models.py:126
-msgid "Uwagi"
-msgstr ""
+#: models.py:155
+msgid "Wiadomość"
+msgstr "Note"
 
-#: models.py:127
+#: models.py:156
 msgid "Newsletter"
 msgstr ""
 
-#: models.py:127
+#: models.py:156
 msgid "Chcę być informowany o nowościach i ofertach firmy Achilles."
-msgstr ""
+msgstr "I want to signup to newsletter"
 
 #: signals.py:17
 msgid "Nowe zamówienie wzornika uszlachetnień "
@@ -82,5 +82,26 @@ msgstr ""
 msgid "Nowe zamówienie wzornika"
 msgstr ""
 
+#: templates/product_detail.html:65
+msgid "Wyślij zapytanie"
+msgstr "Send Quotation"
+
 msgid "Artykuły Reklamowe"
 msgstr "Advertising Articles"
+
+msgid "Opakowania i Materiały POS"
+msgstr "Packaging and POS materials"
+
+msgid "Usługi dla Poligrafii i Prototypowania"
+msgstr "Services for print and prototyping"
+
+msgid "Przykładowe realizacje"
+msgstr "Our sample products"
+
+
+#~ msgid ""
+#~ "Nasze produkty wykonujemy w różnych rozmiarach, wersjach, konfiguracjach. "
+#~ "Sam określasz, co Ci jest potrzebne w Twoim biurze. Ponieważ, niezawsze "
+#~ "jest to oczywiste i proste,Chętnie doradzimy, i pomożemy Ci w dobraniu "
+#~ "odpowiednich opcji."
+#~ msgstr "Advertising Articles"

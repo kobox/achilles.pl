@@ -17,7 +17,7 @@ class CategoryDetail(SingleObjectMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super(CategoryDetail, self).get_context_data(**kwargs)
         context['category'] = self.object
-        context['product_list'] = Product.objects.filter(category=self.object)
+        context['product_list'] = Product.objects.filter(categories=self.object)
         return context
 
 
@@ -33,6 +33,7 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product_images'] = ProductImage.objects.filter(product=self.get_object())
+        context['product_segment'] = self.get_object().categories.all()[0].segment
         return context
 
 

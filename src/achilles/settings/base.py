@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from django.core.urlresolvers import reverse_lazy
 from os.path import dirname, join, exists
-
+from django.conf import settings
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(__file__)))
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
@@ -18,6 +18,9 @@ MEDIA_URL = "/media/"
 LOCALE_PATHS = (
     join(BASE_DIR, 'locale'),
 )
+DIRECTORY = join(BASE_DIR, 'uploads')#getattr(settings, 'FILEBROWSER_DIRECTORY', 'uploads/')
+VERSIONS_BASEDIR = join(BASE_DIR, '_versions') #getattr(settings, 'FILEBROWSER_VERSIONS_BASEDIR', '_versions/')
+
 # Use Django templates using the new Django 1.8 TEMPLATES settings
 TEMPLATES = [
     {
@@ -69,6 +72,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'modeltranslation',
     'django_admin_bootstrapped',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

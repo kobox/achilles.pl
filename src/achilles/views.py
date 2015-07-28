@@ -10,6 +10,8 @@ class HomePage(generic.TemplateView):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['office'] = Category.objects.filter(active=True, segment=1).order_by('order')
         context['packaging'] = Category.objects.filter(active=True, segment=2).order_by('order')
+        context['services'] = Category.objects.filter(active=True, segment=3).order_by('order')
+
         return context
 
 

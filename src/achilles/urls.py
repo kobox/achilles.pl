@@ -7,6 +7,7 @@ import accounts.urls
 import adoffice.urls
 import packaging.urls
 from . import views
+from filebrowser.sites import site
 from django.conf.urls.i18n import i18n_patterns
 
 
@@ -19,6 +20,7 @@ urlpatterns = i18n_patterns(
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
+    url(r'^admin/filebrowser/', include(site.urls)),
     #url(r'^i18n/', include('django.conf.urls.i18n')),
 )
 

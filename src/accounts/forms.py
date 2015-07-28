@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
@@ -7,10 +8,12 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from authtools import forms as authtoolsforms
 from django.contrib.auth import forms as authforms
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 
 class LoginForm(AuthenticationForm):
-    remember_me = forms.BooleanField(required=False, initial=False)
+    remember_me = forms.BooleanField(required=False, initial=False, label=_(u"Zapamiętaj mnie"))
+    fp = unicode(_("Nie pamiętasz hasła?"))
 
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -18,12 +21,12 @@ class LoginForm(AuthenticationForm):
         self.fields["username"].widget.input_type = "email"  # ugly hack
 
         self.helper.layout = Layout(
-            Field('username', placeholder="Enter Email", autofocus=""),
-            Field('password', placeholder="Enter Password"),
-            HTML('<a href="{}">Forgot Password?</a>'.format(
-                reverse("accounts:password-reset"))),
+            Field('username', placeholder="Email", autofocus=""),
+            Field('password', placeholder=_(u"Hasło")),
+            HTML('<a href="{}">'.format(
+                reverse("accounts:password-reset"))+self.fp+'</a>'),
             Field('remember_me'),
-            Submit('sign_in', 'Log in',
+            Submit('sign_in', _(u'Zaloguj się'),
                    css_class="btn btn-lg btn-primary btn-block"),
             )
 
@@ -36,11 +39,11 @@ class SignupForm(authtoolsforms.UserCreationForm):
         self.fields["email"].widget.input_type = "email"  # ugly hack
 
         self.helper.layout = Layout(
-            Field('email', placeholder="Enter Email", autofocus=""),
-            Field('name', placeholder="Enter Full Name"),
-            Field('password1', placeholder="Enter Password"),
-            Field('password2', placeholder="Re-enter Password"),
-            Submit('sign_up', 'Sign up', css_class="btn-warning"),
+            Field('email', placeholder="Email", autofocus=""),
+            Field('name', placeholder=_("Imię i Nazwisko")),
+            Field('password1', placeholder=_("Hasło")),
+            Field('password2', placeholder=_("Hasło")),
+            Submit('sign_up', _(u'Zarejestruj się'), css_class="btn-warning"),
             )
 
 

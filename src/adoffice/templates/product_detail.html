@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
@@ -18,7 +18,8 @@
        <div class="col-lg-3">
                 <h3>{{ product.title }}</h3>
                 <p>{{ product.description }}</p>
-                <table class="striped">
+           {% if product_segment.title == 'biuro' or '' %}
+           <table class="striped">
  <tbody>
               <tr>
                 <td>
@@ -60,12 +61,12 @@
               </td>
             </tr>
             </tbody>
-            </table>
-<a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-head="Create" data-fm-callback="reload">Create new</a>
+            </table>{% endif %}
+<a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-head="{% trans "Wyślij zapytanie" %}-{{ product.title }}" data-fm-callback="reload">{% trans "Wyślij zapytanie" %}</a>
             <div class="product-nav">
-               <a href="{{ product.get_previous_by_timestamp.get_absolute_url }}" id="product-prev"><-</a>
+               <a href="{{ product.get_prev.get_absolute_url }}" id="product-prev"><-</a>
                 <div class="product-gallery"></div>
-               <a href="{{ product.get_next_by_timestamp.get_absolute_url }}" id="product-next">-></a>
+               <a href="{{ product.get_next.get_absolute_url }}" id="product-next">-></a>
             </div>
             </div>
 <div class="col-lg-9">

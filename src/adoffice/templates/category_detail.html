@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 {% load crispy_forms_tags %}
-
+{% load i18n %}
 {% block title %}{{ block.super }}About{% endblock %}
 
 {% block navbar-left %}
@@ -51,7 +51,7 @@
     </section>
 <section class="office-section">
 <div class="container">
-<h2>Przykładowe Realizacje</h2>
+<h2>{% trans "Przykładowe realizacje" %}</h2>
 <!-- Projects Row -->
 <div class="row">
 {% if product_list %}

@@ -2,11 +2,11 @@
 __author__ = 'ko'
 
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Category, GroupCategory, Product
+from .models import Category, GroupCategory, Product, Finishing
 
 
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'slug', 'description', 'meta_description', 'keywords')
+    fields = ('title', 'slug', 'slogan', 'description', 'meta_description', 'keywords')
 
 
 class ProductTranslationOptions(TranslationOptions):
@@ -17,6 +17,10 @@ class GroupCategoryTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 
+class FinishingTranslationOptions(TranslationOptions):
+    fields = ('title',)
+
 translator.register(Category, CategoryTranslationOptions)
 translator.register(Product, ProductTranslationOptions)
 translator.register(GroupCategory, GroupCategoryTranslationOptions)
+translator.register(Finishing, FinishingTranslationOptions)

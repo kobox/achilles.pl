@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django import forms
 from crispy_forms.helper import FormHelper
@@ -34,7 +35,7 @@ class ProfileForm(forms.ModelForm):
         self.helper.layout = Layout(
             Field('picture'),
             Field('bio'),
-            Submit('update', _('Update'), css_class="btn-success"),
+            Submit('update', _('Aktualizuj'), css_class="btn-success"),
             )
 
     class Meta:

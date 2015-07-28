@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.html import strip_tags
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext, ugettext_lazy as _
+from filebrowser.fields import FileBrowseField
 # Create your models here.
 
 
@@ -40,6 +41,8 @@ class Segment(models.Model):
     def __unicode__(self):
         return self.title
 
+#class Page(models.Model):
+
 
 class Category(MetaData):
 
@@ -47,6 +50,7 @@ class Category(MetaData):
     title = models.CharField(_(u'Tytuł'), default='', max_length=254, blank=False, null=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+    slogan = models.CharField(max_length=255, default='', blank=True)
     description = models.TextField(_(u'Opis'), blank=True, null=True)
     picture = models.ImageField(_(u'Kategoria'), default='pics/default.png', upload_to='pics/',
                                 blank=False, null=False)
@@ -60,7 +64,16 @@ class Category(MetaData):
         return self.title
 
 
+class Page(MetaData):
+    section1 = models.TextField(u'Sekcja-1', blank=True, null=True)
+    section2 = models.TextField(u'Sekcja-2', blank=True, null=True)
+
+    class Meta:
+        abstract = True
+
 #subcategories = Category.objects.filter(parent_category__id=target_category.id)
+
+
 class GroupCategory(models.Model):
     title = models.CharField(max_length=254)
 
@@ -83,18 +96,20 @@ class Accessories(models.Model):
 
 
 class Product(MetaData):
+    _category = ''
     title = models.CharField(max_length=254)
     slug = models.SlugField(max_length=150, unique=True)
     description = models.TextField(_(u'Opis'), blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
     format_size = models.CharField(max_length=10, blank=True)
-    category = models.ManyToManyField(Category, blank=True, null=True)
+    category = models.ManyToManyField(Category, blank=True, null=True, name='categories')
     group_category = models.ManyToManyField(GroupCategory, blank=True, null=True)
     finishing = models.ManyToManyField(Finishing, blank=True, null=True)
     accessories = models.ManyToManyField(Accessories, blank=True, null=True)
     picture = models.ImageField(_(u'Obrazek'), default='pics/default.png', upload_to='pics/',
                                 blank=False, null=False)
+    document = FileBrowseField("PDF", max_length=200, directory="documents/", extensions=[".pdf"], blank=True, null=True)
 
     def __unicode__(self):
         return self.title
@@ -103,7 +118,21 @@ class Product(MetaData):
         unique_together = ('title', 'slug')
 
     def get_absolute_url(self):
-        return reverse("adoffice:product", kwargs={"slug": self.slug, "category": self.category.all()[0].slug})
+        return reverse("adoffice:product", kwargs={"slug": self.slug, "category": self.categories.all()[0].slug})
+
+    def get_next(self):
+            self._category = self.categories.all()[0]
+            next = Product.objects.filter(id__gt=self.id, categories__in=[self._category])
+            if next:
+                return next[0]
+                return False
+
+    def get_prev(self):
+        self._category = self.categories.all()[0]
+        prev = Product.objects.filter(id__lt=self.id, categories__in=[self._category]).order_by('-id')
+        if prev:
+            return prev[0]
+            return False
 
 
 class ProductImage(models.Model):
@@ -123,7 +152,7 @@ class Quota(models.Model):
     full_name = models.CharField(_(u'Imię i Nazwisko'), max_length=254, default='', blank=False, null=False)
     company = models.CharField(_(u'Firma'), max_length=254, default='', blank=True, null=True)
     phone = models.CharField(_(u'Telefon'), max_length=254, default='')
-    note = models.TextField(_(u'Uwagi'), default='', blank=True, null=True)
+    note = models.TextField(_(u'Wiadomość'), default='', blank=True, null=True)
     newsletter = models.BooleanField(_(u'Newsletter'), default=True, help_text=_(u'Chcę być informowany o nowościach i ofertach firmy Achilles.'))
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
