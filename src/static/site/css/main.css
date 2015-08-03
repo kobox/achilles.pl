@@ -215,7 +215,9 @@ body>.navbar-transparent {
 #map-container {
     height: 400px
 }
-
+#msg-info {
+    visibility:hidden;
+}
 .img-dim {
     opacity: 0.5;
     box-shadow: inset 0px 0px 64px 64px #EA1717, 0px 0px 4px 4px #EA1717;

@@ -64,12 +64,22 @@ class Category(MetaData):
         return self.title
 
 
+class PageClass(models.Model):
+    name = models.CharField(max_length=255, default='homepage', blank=False, null=False)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Page(MetaData):
     section1 = models.TextField(u'Sekcja-1', blank=True, null=True)
     section2 = models.TextField(u'Sekcja-2', blank=True, null=True)
+    title = models.CharField(max_length=254, default='')
+    pageclass = models.ForeignKey(PageClass, default='1', blank=False, null=False)
 
-    class Meta:
-        abstract = True
+    def __unicode__(self):
+        return self.title
+
 
 #subcategories = Category.objects.filter(parent_category__id=target_category.id)
 

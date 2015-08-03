@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories, Quota, Segment
+from .models import Category, GroupCategory, Product, ProductImage, Finishing, Accessories, Quota, Segment, Page, PageClass
 
 
 @admin.register(Category)
@@ -49,3 +49,15 @@ class SegmentAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'title',)
 
     model = Segment
+
+@admin.register(Page)
+class HomePageAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'title', 'pageclass')
+
+    model = Page
+
+@admin.register(PageClass)
+class HomePageAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'name',)
+
+    model = PageClass

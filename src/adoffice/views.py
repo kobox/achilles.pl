@@ -6,6 +6,7 @@ from django.template import RequestContext
 from fm.views import AjaxCreateView
 from .forms import SignUpForm
 
+
 class CategoryDetail(SingleObjectMixin, ListView):
     paginate_by = 2
     template_name = "category_detail.html"

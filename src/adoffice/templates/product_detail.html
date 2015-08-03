@@ -62,8 +62,11 @@
             </tr>
             </tbody>
             </table>{% endif %}
-<a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-head="{% trans "Wyślij zapytanie" %}-{{ product.title }}" data-fm-callback="reload">{% trans "Wyślij zapytanie" %}</a>
-            <div class="product-nav">
+<a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-target="#msg-info" data-fm-head="{% trans "Wyślij zapytanie" %}-{{ product.title }}" data-fm-callback="replace">{% trans "Wyślij zapytanie" %}</a>
+           <div id="msg-info" class="alert alert-info">
+           Dziękujemy za kontakt.
+           </div>
+           <div class="product-nav">
                <a href="{{ product.get_prev.get_absolute_url }}" id="product-prev"><-</a>
                 <div class="product-gallery"></div>
                <a href="{{ product.get_next.get_absolute_url }}" id="product-next">-></a>
