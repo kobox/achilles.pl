@@ -41,7 +41,7 @@
       <div class="container">
 
         <div class="row">
-            <div class="panel">
+            <div class="panel text-left">
 
                 {{ category.description|safe }}
 
@@ -51,7 +51,7 @@
     </section>
 <section class="office-section">
 <div class="container">
-<h2>{% trans "Przykładowe realizacje" %}</h2>
+<h2>{% if category.items_title %} {{ category.items_title }} {% else %}{% trans "Przykładowe realizacje" %}{% endif %}</h2>
 <!-- Projects Row -->
 <div class="row">
 {% if product_list %}

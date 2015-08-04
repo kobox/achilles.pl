@@ -98,6 +98,8 @@ msgstr "Services for print and prototyping"
 msgid "Przykładowe realizacje"
 msgstr "Our sample products"
 
+msgid "Dziękujemy za kontakt, wkrótce skontaktuje się z Tobą nasz przedstawiciel."
+msgstr "Thank you for your interest with our products, one of our experts will look through the request and get back to you as soon as possible about your product"
 
 #~ msgid ""
 #~ "Nasze produkty wykonujemy w różnych rozmiarach, wersjach, konfiguracjach. "

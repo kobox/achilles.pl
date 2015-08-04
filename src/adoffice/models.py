@@ -48,6 +48,7 @@ class Category(MetaData):
 
     slug = models.SlugField(max_length=50)
     title = models.CharField(_(u'Tytuł'), default='', max_length=254, blank=False, null=False)
+    items_title = models.CharField(_(u'Tytuł Katalogu'), default='', max_length=254, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
     slogan = models.CharField(max_length=255, default='', blank=True)
@@ -58,6 +59,7 @@ class Category(MetaData):
     order = models.IntegerField(default=0, blank=False, null=False)
     parent_category = models.ForeignKey('self', blank=True, null=True, related_name="subcategories")
     segment = models.ForeignKey(Segment, default='1', blank=False, null=False)
+
     #products = models.ManyToManyField(Product, blank=True, null=True)
 
     def __unicode__(self):

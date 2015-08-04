@@ -184,6 +184,13 @@ body>.navbar-transparent {
 #sec1 {
     background:url("/static/site/img/desk.jpg") no-repeat;
     background-size: cover;
+    padding: 80px 0;
+}
+
+#finishing {
+    background:url("/static/site/img/uszlachetnianie-druku.jpg") no-repeat;
+    background-size: cover;
+    padding: 80px 0;
 }
 
 /* Profile page styling */
@@ -196,7 +203,7 @@ body>.navbar-transparent {
 }
 
 .text-page {
-    padding: 80px 0;
+    /*padding: 80px 0;*/
 }
 .text-header {
    min-height: 300px;

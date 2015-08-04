@@ -6,7 +6,7 @@ from .models import Category, GroupCategory, Product, Finishing, Page
 
 
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'slug', 'slogan', 'description', 'meta_description', 'keywords')
+    fields = ('title', 'slug', 'slogan', 'description', 'meta_description', 'keywords', 'items_title')
 
 
 class ProductTranslationOptions(TranslationOptions):
