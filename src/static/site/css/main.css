@@ -2,10 +2,12 @@
 
 html, body{
     height:100%;		/* For full height images */
+
 }
 .achilles {
  color:#F26522;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -193,6 +195,11 @@ body>.navbar-transparent {
     padding: 80px 0;
 }
 
+#uv-coating {
+    background:url("/static/site/img/lakierowanie-1800.jpg") no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
 /* Profile page styling */
 .profile-head {
     background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJklEQVQIW2NkAIILFy78NzAwYATRjCABZEGwAEwFiA1WBlIOUwkA72gTdDIYVO4AAAAASUVORK5CYII=) repeat;
@@ -203,11 +210,16 @@ body>.navbar-transparent {
 }
 
 .text-page {
-    /*padding: 80px 0;*/
+    /*padding-top: 60px;*/
 }
+
+.product-page {
+    padding-top: 55px;
+}
+
 .text-header {
    min-height: 300px;
-    padding-top: 50px;
+   padding-top: 50px;
 }
 .text-head {
     padding-top: 50px;
@@ -577,4 +589,8 @@ ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.portfolio
 /* --- portfolio detail --- */
 .top-wrapper {
   margin-bottom:20px;
+}
+
+section {
+     font-size: 16px;
 }

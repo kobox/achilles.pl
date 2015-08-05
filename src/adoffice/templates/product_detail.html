@@ -12,12 +12,12 @@
 <!-- Benefits of the Django application -->
 {% block container %}
 
-<div id="sec2" class="text-page">
+<div id="sec2" class="product-page">
   <div class="container-fluid">
     <div class="row">
        <div class="col-lg-3">
                 <h3>{{ product.title }}</h3>
-                <p>{{ product.description }}</p>
+                <p>{{ product.description|safe }}</p>
            {% if product_segment.title == 'biuro' or '' %}
            <table class="striped">
  <tbody>
