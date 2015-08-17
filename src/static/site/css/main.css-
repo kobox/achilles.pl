@@ -1,13 +1,13 @@
 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
-@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,latin-ext);
 
 html, body{
     height:100%;		/* For full height images */
+
 }
 .achilles {
  color:#F26522;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -181,16 +181,14 @@ body>.navbar-transparent {
     padding-bottom: 80px;
   }
 }
-@media screen and (min-width: 1400px){
-    #product-description{
-    min-height: 600px;
-}
-}
+
 /* About page styling */
 #sec1 {
     background:url("/static/site/img/desk.jpg") no-repeat;
     background-size: cover;
+    padding: 80px 0;
 }
+
 #finishing {
     background:url("/static/site/img/uszlachetnianie-druku.jpg") no-repeat;
     background-size: cover;
@@ -199,12 +197,6 @@ body>.navbar-transparent {
 
 #uv-coating {
     background:url("/static/site/img/lakierowanie-1800.jpg") no-repeat;
-    background-size: cover;
-    padding: 80px 0;
-}
-
-#binders {
-    background:url("/static/site/img/binders.jpg") no-repeat;
     background-size: cover;
     padding: 80px 0;
 }
@@ -218,14 +210,16 @@ body>.navbar-transparent {
 }
 
 .text-page {
-    padding: 40px 0;
+    /*padding-top: 60px;*/
 }
+
 .product-page {
     padding-top: 55px;
 }
+
 .text-header {
    min-height: 300px;
-    padding-top: 50px;
+   padding-top: 50px;
 }
 .text-head {
     padding-top: 50px;
@@ -426,7 +420,6 @@ body>.navbar-transparent {
   .col-subscribe {
     width: 100%;
   }
-  #product-description{min-height: 100px;}
 }
 .subscribe-form {
   padding-top: 20px;
@@ -450,28 +443,7 @@ body>.navbar-transparent {
 .subscribe-description {
   padding-bottom: 20px;
 }
-.office-section{
-    padding-top: 50px;
-}
-#mainquote {
-  background: #f9f9f9;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-  font-family: 'Comfortaa', sans-serif;
-    font-size: 1.5em;
-}
-#mainquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-#mainquote p {
-  display: inline;
-}
+
 
 /* ===============================
 12. Portfolio
@@ -619,28 +591,6 @@ ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.portfolio
   margin-bottom:20px;
 }
 
-
-@media only screen and (max-width: 600px) {
-    /*a.carousel-control,
-    a.carousel-control.left
-    a.carousel-control.right {
-        background: none !important;
-        height: 30px;
-        bottom: -30px;
-        color: black;
-        top: auto;
-    }
-    .carousel-slide {
-        padding-bottom: 30px;
-    }*/
+section {
+     font-size: 16px;
 }
-.btn-primary {background: #f26522; border-color: #de4800;}
-.btn-primary:hover {background: #de4800; border-color: #de4800;}
-.btn-primary.fm-create {margin: 20px auto; width: 140px; display: block;}
-
-.product-nav {text-align: center;}
-.product-nav a {text-decoration: none; font-size: 30px;}
-.product-nav a#product-prev {float: left;}
-.product-nav a#product-next {float: right;}
-.product-nav span {font-size: 30px;}
-.product-navigation.hidden-lg {margin-top: 20px;}

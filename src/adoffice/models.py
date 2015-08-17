@@ -146,6 +146,9 @@ class Product(MetaData):
             return prev[0]
             return False
 
+    #def get_category(self):
+
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product)

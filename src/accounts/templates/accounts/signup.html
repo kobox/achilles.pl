@@ -2,9 +2,9 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block title %}{{ block.super }}Sign Up{% endblock %}
+{% block title %}{{ block.super }}{% trans "Rejestracja" %}{% endblock %}
 
-{% block form_heading %}Signing Up is Free{% endblock %}
+{% block form_heading %} {% trans "Zarejestruj się" %} {% endblock %}
 
 {% block form %}
   {% crispy form %}

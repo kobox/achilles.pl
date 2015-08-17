@@ -12,16 +12,15 @@
 <!-- Benefits of the Django application -->
 {% block container %}
 
-<div id="sec2" class="text-page">
+<div id="sec2" class="product-page">
   <div class="container-fluid">
     <div class="row">
        <div class="col-lg-3">
-       <div id="product-description">
                 <h3>{{ product.title }}</h3>
                 <p>{{ product.description|safe }}</p>
            {% if product_segment.title == 'biuro' or '' %}
            <table class="striped">
-            <tbody>
+ <tbody>
               <tr>
                 <td>
                   Format:
@@ -63,22 +62,17 @@
             </tr>
             </tbody>
             </table>{% endif %}
-       <div id="msg-info" class="alert alert-info">
+<a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-target="#msg-info" data-fm-head="{% trans "Wyślij zapytanie" %}-{{ product.title }}" data-fm-callback="replace">{% trans "Wyślij zapytanie" %}</a>
+           <div id="msg-info" class="alert alert-info">
           {% trans "Dziękujemy za kontakt, wkrótce skontaktuje się z Tobą nasz przedstawiciel." %}
            </div>
-       </div>
-           <a href="{% url 'adoffice:test' %}" class="fm-create btn btn-primary" data-fm-target="#msg-info" data-fm-head="{% trans "Wyślij zapytanie" %}-{{ product.title }}" data-fm-callback="replace">{% trans "Wyślij zapytanie" %}</a>
-
-           <div class="product-navigation visible-lg hidden-xs hidden-sm hidden-md">
-                    <div class="product-nav">
-                       <a class="glyphicon glyphicon-chevron-left" href="{{ product.get_prev.get_absolute_url }}" id="product-prev"></a>
-                        <span class="glyphicon glyphicon-th-large"></span>
-                        <!--<div class="product-gallery"></div>-->
-                       <a class="glyphicon glyphicon-chevron-right" href="{{ product.get_next.get_absolute_url }}" id="product-next"></a>
-                    </div>
-               </div>
-       </div>
-        <div class="col-lg-9">
+           <div class="product-nav">
+               <a href="{{ product.get_prev.get_absolute_url }}" id="product-prev"><-</a>
+                <div class="product-gallery"></div>
+               <a href="{{ product.get_next.get_absolute_url }}" id="product-next">-></a>
+            </div>
+            </div>
+<div class="col-lg-9">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -111,16 +105,6 @@
                     </a>
                 </div>
             </div>
-
-        <div class="product-navigation col-lg-3 hidden-lg">
-            <div class="product-nav">
-                <a class="glyphicon glyphicon-chevron-left" href="{{ product.get_prev.get_absolute_url }}" id="product-prev"></a>
-                <a href="{{ product.get_absolute_url}}"><span class="glyphicon glyphicon-th-large"></span></a>
-                <!--<div class="product-gallery"></div>-->
-                <a class="glyphicon glyphicon-chevron-right" href="{{ product.get_next.get_absolute_url }}" id="product-next"></a>
-            </div>
-        </div>
-
     </div>
     </div>
   </div>
