@@ -519,7 +519,7 @@ body>.navbar-transparent {
   cursor: pointer;
 }
 
-.item-thumbs a + img {
+.item-thumbs a img {
   width: 100%;
    border:1px solid #ccc;
    padding:5px;
