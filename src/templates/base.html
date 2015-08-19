@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+ {% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
     {% load staticfiles %}
     {% load thumbnail %}
-    
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,8 +121,16 @@
               <p>&copy; Achilles Polska {% now 'Y' %}</p>
           </div>
           <div class="col-lg-6 text-right">
-            Connect with us on
-            <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+            <address>
+            <strong>Achilles Polska</strong><br>
+            ul. M. Płażyńskiego 6 <br>83-020 Cedry Wielkie
+            <section >
+              <p>
+                  <i class="fa fa-phone"></i> (58) 683 60 30 <br/>
+                  <i class="fa fa-envelope"></i> achilles@achilles.pl
+              </p>
+            </section>
+          </address>
           </div>
         </div>
             </div>

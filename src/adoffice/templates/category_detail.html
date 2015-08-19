@@ -57,7 +57,7 @@
 {% if product_list %}
         {% for p in product_list %}
             <div class="col-md-3 portfolio-item item-thumbs">
-                <a href="#">
+                <a href="{{ p.slug }}">
                     <img class="img-responsive" src="{{ p.picture.url }}" alt="">
                 </a>
                 <h3>
