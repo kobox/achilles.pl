@@ -216,6 +216,12 @@ body>.navbar-transparent {
     background-size: cover;
     padding: 80px 0;
 }
+.navbar-phone {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    font-size: 16px;
+}
 /* Profile page styling */
 .profile-head {
     background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJklEQVQIW2NkAIILFy78NzAwYATRjCABZEGwAEwFiA1WBlIOUwkA72gTdDIYVO4AAAAASUVORK5CYII=) repeat;
@@ -237,6 +243,10 @@ body>.navbar-transparent {
 }
 .text-head {
     padding-top: 50px;
+}
+.text-panel{
+    font-size: 16px;
+    padding: 15px;
 }
 #map-outer {
     height: 440px;

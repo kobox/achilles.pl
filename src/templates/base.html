@@ -59,7 +59,11 @@
             {% block navbar-left %}{% endblock %}
           </ul>
           <ul class="nav navbar-nav navbar-right">
+          <li><span class="navbar-phone"><i class="fa fa-phone"></i> +48 58 683 60 30</span></li>
+              <li><a href="/pl"><img src="{% static '/static/site/img/pl.png' %}"/></a></li>
+                <li><a href="/en"><img src="{% static '/static/site/img/en.png' %}"/></a></li>
             {% block navbar-right %}
+
               {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
