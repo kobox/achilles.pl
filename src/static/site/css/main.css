@@ -242,6 +242,11 @@ body>.navbar-transparent {
     background-size: cover;
     padding: 80px 0;
 }
+#paperbags {
+    background:url("/static/site/img/paperbags.jpg") no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
 
 .navbar-phone {
     position: relative;

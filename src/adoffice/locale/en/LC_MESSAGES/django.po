@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-28 10:43+0200\n"
+"POT-Creation-Date: 2015-08-26 09:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,88 +18,100 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:15
+#: adoffice/models.py:15
 msgid "Tytuł sekcji meta"
 msgstr "meta title"
 
-#: models.py:16
+#: adoffice/models.py:16
 msgid "Opcjonalny HTML title tag."
 msgstr ""
 
-#: models.py:17
+#: adoffice/models.py:17
 msgid "Opis sekcji meta"
 msgstr "meta desc"
 
-#: models.py:50
+#: adoffice/models.py:50
 msgid "Tytuł"
 msgstr "Title"
 
-#: models.py:54 models.py:102
+#: adoffice/models.py:51
+msgid "Tytuł Katalogu"
+msgstr ""
+
+#: adoffice/models.py:55 adoffice/models.py:114
 msgid "Opis"
 msgstr "Description"
 
-#: models.py:55
+#: adoffice/models.py:56
 msgid "Kategoria"
 msgstr "Cateogry"
 
-#: models.py:57
+#: adoffice/models.py:58
 msgid "Klasa obrazka"
 msgstr "Picture class"
 
-#: models.py:110 models.py:140
+#: adoffice/models.py:122 adoffice/models.py:155
 msgid "Obrazek"
 msgstr "Picture"
 
-#: models.py:152
+#: adoffice/models.py:167
 msgid "Imię i Nazwisko"
 msgstr "Full Name"
 
-#: models.py:153
+#: adoffice/models.py:168
 msgid "Firma"
 msgstr "Company"
 
-#: models.py:154
+#: adoffice/models.py:169
 msgid "Telefon"
 msgstr "Phone"
 
-#: models.py:155
+#: adoffice/models.py:170
 msgid "Wiadomość"
 msgstr "Note"
 
-#: models.py:156
+#: adoffice/models.py:171
 msgid "Newsletter"
 msgstr ""
 
-#: models.py:156
+#: adoffice/models.py:171
 msgid "Chcę być informowany o nowościach i ofertach firmy Achilles."
 msgstr "I want to signup to newsletter"
 
-#: signals.py:17
+#: adoffice/signals.py:17
 msgid "Nowe zamówienie wzornika uszlachetnień "
 msgstr ""
 
-#: signals.py:18
+#: adoffice/signals.py:18
 msgid "Nowe zamówienie wzornika"
 msgstr ""
 
-#: templates/product_detail.html:65
+#: adoffice/templates/_product_detail.html:65
+#: adoffice/templates/product_detail.html:70
 msgid "Wyślij zapytanie"
 msgstr "Send Quotation"
 
-msgid "Artykuły Reklamowe"
-msgstr "Advertising Articles"
+#: adoffice/templates/_product_detail.html:67
+#: adoffice/templates/product_detail.html:67
+msgid ""
+"Dziękujemy za kontakt, wkrótce skontaktuje się z Tobą nasz przedstawiciel."
+msgstr ""
+"Thank you for your interest with our products, one of our experts will look "
+"through the request and get back to you as soon as possible about your "
+"product"
 
-msgid "Opakowania i Materiały POS"
-msgstr "Packaging and POS materials"
-
-msgid "Usługi dla Poligrafii i Prototypowania"
-msgstr "Services for print and prototyping"
-
+#: adoffice/templates/category_detail.html:54
 msgid "Przykładowe realizacje"
 msgstr "Our sample products"
 
-msgid "Dziękujemy za kontakt, wkrótce skontaktuje się z Tobą nasz przedstawiciel."
-msgstr "Thank you for your interest with our products, one of our experts will look through the request and get back to you as soon as possible about your product"
+#~ msgid "Artykuły Reklamowe"
+#~ msgstr "Advertising Articles"
+
+#~ msgid "Opakowania i Materiały POS"
+#~ msgstr "Packaging and POS materials"
+
+#~ msgid "Usługi dla Poligrafii i Prototypowania"
+#~ msgstr "Services for print and prototyping"
 
 #~ msgid ""
 #~ "Nasze produkty wykonujemy w różnych rozmiarach, wersjach, konfiguracjach. "

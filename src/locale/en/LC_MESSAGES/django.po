@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-23 23:06+0200\n"
+"POT-Creation-Date: 2015-08-26 09:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: accounts/forms.py:23
-msgid "Hasło"
-msgstr "Password"
+#: accounts/forms.py:15
+msgid "Zapamiętaj mnie"
+msgstr "Remember me"
 
-#: accounts/forms.py:24
+#: accounts/forms.py:16
 msgid "Nie pamiętasz hasła?"
 msgstr "Forgot Password?"
 
-#: accounts/forms.py:27 accounts/templates/accounts/login.html:7
+#: accounts/forms.py:25 accounts/forms.py:44 accounts/forms.py:45
+msgid "Hasło"
+msgstr "Password"
+
+#: accounts/forms.py:29 accounts/templates/accounts/login.html:7
 #: accounts/templates/accounts/signup.html:14
 #, fuzzy
 #| msgid "Zaloguj"
 msgid "Zaloguj się"
 msgstr "Log in"
+
+#: accounts/forms.py:43
+msgid "Imię i Nazwisko"
+msgstr "Full Name"
+
+#: accounts/forms.py:46 accounts/templates/accounts/login.html:14
+#: accounts/templates/accounts/signup.html:7 templates/home.html:15
+msgid "Zarejestruj się"
+msgstr "Sign Up"
 
 #: accounts/templates/accounts/emails/password-reset-email.html:2
 #, python-format
@@ -60,9 +73,9 @@ msgstr ""
 msgid "Nie masz konta?"
 msgstr "Don't have account?"
 
-#: accounts/templates/accounts/login.html:14 templates/home.html:15
-msgid "Zarejestruj się"
-msgstr "Sign Up"
+#: accounts/templates/accounts/signup.html:5
+msgid "Rejestracja"
+msgstr "Register"
 
 #: accounts/templates/accounts/signup.html:14
 msgid "Masz już konto?"
@@ -70,11 +83,10 @@ msgstr "Already signed up?"
 
 #: packaging/models.py:14
 msgid "Title"
-msgstr ""
+msgstr "Tytuł"
 
 #: packaging/models.py:15
-msgid ""
-"Optional title to be used in the HTML title tag. If left blank, the main "
+msgid "Optional title to be used in the HTML title tag. If left blank, the main "
 "title field will be used."
 msgstr ""
 
@@ -90,7 +102,7 @@ msgstr "About"
 msgid "Oferta"
 msgstr "Products and Services"
 
-#: templates/_navbar.html:7 templates/home.html:108
+#: templates/_navbar.html:7 templates/home.html:45
 msgid "Artykuły Reklamowe"
 msgstr "Advertising Articles"
 
@@ -100,8 +112,24 @@ msgstr "Packaging and POS"
 
 #: templates/_navbar.html:9
 msgid "Usługi dla Poligrafii"
-msgstr "Laminating Services"
+msgstr "Paper finishing Services"
 
 #: templates/home.html:14
 msgid "Zaloguj"
 msgstr "Log in"
+
+#: templates/home.html:63
+#, fuzzy
+#| msgid "Opakowania i materiały POS"
+msgid "Opakowania i Materiały POS"
+msgstr "Packaging and POS"
+
+#: templates/home.html:81
+#, fuzzy
+#| msgid "Usługi dla Poligrafii"
+msgid "Usługi dla Poligrafii i Prototypowania"
+msgstr "Laminating Services"
+
+#: templates/home.html:107
+msgid "Bądź z nami na bieżąco i zapisz się do newslettera"
+msgstr "Sign up to our newsletter and stay up to date"
