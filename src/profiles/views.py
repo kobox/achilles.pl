@@ -56,5 +56,5 @@ class EditProfile(LoginRequiredMixin, generic.TemplateView):
         profile = profile_form.save(commit=False)
         profile.user = user
         profile.save()
-        messages.success(request, "Profile details saved!")
+        messages.success(request, "Zapisano")
         return redirect("profiles:show_self")

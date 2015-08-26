@@ -13,11 +13,13 @@ class BaseProfile(models.Model):
     slug = models.UUIDField(default=uuid.uuid4, blank=True, editable=False)
     # Add more user profile fields here. Make sure they are nullable
     # or with default values
-    picture = models.ImageField(_('Twoje logo'),
+    picture = models.ImageField(_('Moje logo'),
                                 upload_to='profile_pics/%Y-%m-%d/',
                                 null=True,
                                 blank=True)
-    bio = models.CharField("Short Bio", max_length=200, blank=True, null=True)
+    bio = models.BooleanField(_("Artykuły Reklamowe"), default=True, blank=True)
+    newsp = models.BooleanField(_("Opakowania i materiały POS"), default=True, blank=True)
+    newsl = models.BooleanField(_("Usługi dla Poligrafii"), default=True, blank=True)
     email_verified = models.BooleanField(_("Email zweryfikowany"), default=False)
 
     class Meta:

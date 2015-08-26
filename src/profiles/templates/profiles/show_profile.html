@@ -46,7 +46,11 @@
 	    <span class="sr-only">Permalink</span></a> {{ show_user.profile.get_absolute_url }}
 	</div>
         <div class="panel-body">
-	  <strong>Bio</strong>: {{ show_user.profile.bio }}
+            <h3>{% trans 'Newsletter - Moje subskrybcje' %}</h3>
+	  <strong>{% trans 'Artykuły Reklamowe' %}</strong>: {% if show_user.profile.bio == True %} {% trans "Aktywne" %} {% else %} {% trans "Nieaktywne" %}{% endif %}<br/>
+            <strong>{% trans 'Opakowania i materiały POS' %} </strong>: {% if show_user.profile.newsp == True %} {% trans "Aktywne" %} {% else %} {% trans "Nieaktywne" %}{% endif %} <br/>
+            <strong>{%  trans 'Usługi dla Poligrafii' %} </strong>: {% if show_user.profile.newsl == True %} {% trans "Aktywne" %} {% else %} {% trans "Nieaktywne" %}{% endif %}
+
 	</div>
       </div>
     </div>

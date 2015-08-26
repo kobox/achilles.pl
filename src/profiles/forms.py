@@ -4,7 +4,7 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import get_user_model
 from . import models
 
@@ -27,6 +27,7 @@ class UserForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
+    subscriptions = unicode(_("Newsletter - Moje subskrypcje"))
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
@@ -34,10 +35,13 @@ class ProfileForm(forms.ModelForm):
         self.helper.form_tag = False
         self.helper.layout = Layout(
             Field('picture'),
+            HTML("<p>"+self.subscriptions+":</p>"),
             Field('bio'),
+            Field('newsp'),
+            Field('newsl'),
             Submit('update', _('Aktualizuj'), css_class="btn-success"),
             )
 
     class Meta:
         model = models.Profile
-        fields = ['picture', 'bio']
+        fields = ['picture', 'bio', 'newsp', 'newsl']

@@ -108,7 +108,7 @@ msgstr "Advertising Articles"
 
 #: templates/_navbar.html:8
 msgid "Opakowania i materiały POS"
-msgstr "Packaging and POS"
+msgstr "Packaging and POS materials"
 
 #: templates/_navbar.html:9
 msgid "Usługi dla Poligrafii"
