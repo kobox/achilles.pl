@@ -14,6 +14,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^about/$', views.AboutPage.as_view(), name='about'),
+    url(r'^thanks/$', views.SubscriberPage.as_view(), name='subscribed'),
     #url(r'^product/$', views.ProductPage.as_view(), name='product'),
     url(r'^katalog/', include(adoffice.urls, namespace='adoffice')),
     # url(r'^opakowania/', include(packaging.urls, namespace='packaging')),

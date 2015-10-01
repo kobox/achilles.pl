@@ -1,6 +1,7 @@
 from django.views import generic
 from adoffice.models import Category, Page
-from forms import ContactForm
+from forms import SubscribeForm
+from django.shortcuts import redirect
 
 class HomePage(generic.TemplateView):
     template_name = "home.html"
@@ -8,13 +9,14 @@ class HomePage(generic.TemplateView):
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         if context["form"].is_valid():
-            print 'Dziekujemy za Twoje zainteresowanie, sprawdz swoja poczte email.'
+            print 'sending mail...'
+            return redirect('/thanks/')
 
         return super(generic.TemplateView, self).render_to_response(context)
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        form = ContactForm(self.request.POST or None)
+        form = SubscribeForm(self.request.POST or None)
         context["form"] = form
         context['office'] = Category.objects.filter(active=True, segment=1).order_by('order')
         context['packaging'] = Category.objects.filter(active=True, segment=2).order_by('order')
@@ -41,3 +43,6 @@ class ContactPage(generic.TemplateView):
         context['page'] = Page.objects.get(pageclass=3)
 
         return context
+
+class SubscriberPage(generic.TemplateView):
+    template_name = "subscribed.html"

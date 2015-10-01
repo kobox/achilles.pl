@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %}{{ block.super }}{{ page.title }}{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div id="subscribed" class="text-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1> </h1>
+        <p class="lead"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec3">
+  <div class="container">
+    <div class="row">
+    <div id="mainquote">
+      {% trans "Dziękujemy za zapisanie się do naszej listy subskrybentów. Sprawdź swoją pocztę email." %}</div>
+    </div>
+  </div>
+</div>
+{% endblock container %}
+

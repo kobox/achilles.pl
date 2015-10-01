@@ -133,3 +133,7 @@ msgstr "Laminating Services"
 #: templates/home.html:107
 msgid "Bądź z nami na bieżąco i zapisz się do newslettera"
 msgstr "Sign up to our newsletter and stay up to date"
+
+#: templates/subscribed.html:107
+msgid "Dziękujemy za zapisanie się do naszej listy subskrybentów. Sprawdź swoją pocztę email."
+msgstr "Thank you for your subscription. Check your email for further instructions."

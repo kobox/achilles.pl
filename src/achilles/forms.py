@@ -1,11 +1,24 @@
 __author__ = 'ko'
 
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
+from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
-class ContactForm(forms.Form):
-    name = forms.CharField()
-    message = forms.CharField(widget=forms.Textarea)
+class SubscribeForm(forms.Form):
+    email = forms.EmailField()
 
+    def __init__(self, *args, **kwargs):
+        super(SubscribeForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.form_show_labels = False
+        self.helper.layout = Layout(
+            Field('email'),
+            )
+
+    class Meta:
+        fields = ['email']
     def send_email(self):
         # send email using the self.cleaned_data dictionary
         pass
