@@ -10,8 +10,8 @@
 {% endblock %}
 {% block navbar-right %}
   {% if not user.is_authenticated %}
-<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">{% trans "Zaloguj" %}</a>
-<a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">{% trans "Zarejestruj się" %}</a>
+<li><a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">{% trans "Zaloguj" %}</a></li>
+<li><a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">{% trans "Zarejestruj się" %}</a></li>
   {% else %}
     {{ block.super }}
   {% endif %}
@@ -60,9 +60,13 @@
 <div class="container">
 <h2>{% if category.items_title %} {{ category.items_title }} {% else %}{% trans "Przykładowe realizacje" %}{% endif %}</h2>
 <!-- Projects Row -->
-<div class="row">
+
 {% if product_list %}
         {% for p in product_list %}
+            {% if forloop.counter|divisibleby:4 %}
+                <div class="row">
+            {% endif %}
+
             <div class="col-md-3 portfolio-item item-thumbs">
                 <a href="{{ p.slug }}">
                     <img class="img-responsive" src="{{ p.picture.url }}" alt="">
@@ -71,10 +75,13 @@
                     <a href="{{ p.slug }}">{{ p.title }}</a>
                 </h3>
             </div>
+            {% if forloop.counter|divisibleby:4 %}
+                </div>
+            {% endif %}
         {% endfor %}
     {% endif %}
 
-    </div></div>
+    </div>
 </section>
 </div>
 
