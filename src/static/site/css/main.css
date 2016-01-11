@@ -255,7 +255,11 @@ body >.navbar-transparent {
     background-size: cover;
     padding: 80px 0;
 }
-
+#wine {
+    background:url("/static/site/img/pudelka-wino.jpg") no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
 #uv-coating {
     background:url("/static/site/img/lakier.jpg") no-repeat;
     background-size: cover;
