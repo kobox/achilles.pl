@@ -114,7 +114,7 @@ class Product(MetaData):
     description = models.TextField(_(u'Opis'), blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
-    format_size = models.CharField(max_length=10, blank=True)
+    format_size = models.CharField(max_length=25, blank=True)
     category = models.ManyToManyField(Category, blank=True, null=True, name='categories')
     group_category = models.ManyToManyField(GroupCategory, blank=True, null=True)
     finishing = models.ManyToManyField(Finishing, blank=True, null=True)
