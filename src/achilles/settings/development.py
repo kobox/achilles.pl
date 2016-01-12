@@ -23,7 +23,7 @@ THUMBNAIL_DEBUG = True
 
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
-
+SECRET_KEY = '3q3t11uy^_3naf#$z$bo6c(75yowp5-vr8#a7@!=7a=kggk28f'
 # Reset logging
 # (see http://www.caktusgroup.com/blog/2015/01/27/Django-Logging-Configuration-logging_config-default-settings-logger/)
 

@@ -62,7 +62,7 @@ if exists(env_file):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Raises ImproperlyConfigured exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
+#SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
 
