@@ -16,8 +16,14 @@ if "celery" in sys.argv[0]:
 #    'debug_toolbar.apps.DebugToolbarConfig',)
 #DEBUG_TOOLBAR_CONFIG = {'JQUERY_URL': ''}
 # Show emails to console in DEBUG mode
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'poczta.achilles.pl'
+EMAIL_HOST_USER = 'biuro@achilles.pl'
+EMAIL_HOST_PASSWORD = 'Achilles01!'
+DEFAULT_FROM_EMAIL = 'no-reply@achilles.pl'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
 # Show thumbnail generation errors
 THUMBNAIL_DEBUG = True
 

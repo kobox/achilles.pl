@@ -62,7 +62,10 @@
               </td>
             </tr>
             </tbody>
-            </table>{% endif %}
+            </table>
+           {% if product.document.url %}
+               <p>Szablon PDF: &nbsp;<a href="{{ product.document.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></p>
+           {% endif %}{% endif %}
        <div id="msg-info" class="alert alert-info">
           {% trans "Dziękujemy za kontakt, wkrótce skontaktuje się z Tobą nasz przedstawiciel." %}
            </div>
