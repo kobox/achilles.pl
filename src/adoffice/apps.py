@@ -1,0 +1,10 @@
+from __future__ import unicode_literals
+from django.apps import AppConfig
+
+
+class AdofficeConfig(AppConfig):
+    name = "adoffice"
+    verbose_name = 'Office'
+
+    def ready(self):
+        from . import signals

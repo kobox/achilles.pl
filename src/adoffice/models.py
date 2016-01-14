@@ -4,6 +4,7 @@ from django.utils.html import strip_tags
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext, ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
+from django.core.mail import send_mail
 # Create your models here.
 
 
@@ -174,4 +175,11 @@ class Quota(models.Model):
     def __unicode__(self):
         return self.email
 
+    def save(self):
+        if self.email:
+            message = _("Zapytanie strona www ").format(self)
+            subject = _(u"Dziękujemy za kontakt")
+            #send_mail(subject, message, "no-replay@achilles.pl", [self.email, ])
+            #print('Stored: {}'.format(self))
+        super(Quota, self).save()
 

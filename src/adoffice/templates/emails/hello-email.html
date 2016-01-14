@@ -1,0 +1,27 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans %} {{ site_name }}.{% endblocktrans %}
+
+{% trans "Please go to the following page and choose a new password:" %}
+{% block reset_link %}
+{{ protocol }}://{{ domain }}{% url 'accounts:password-reset-confirm' uidb64=uid token=token %}
+{% endblock %}
+{% trans "Your login email, in case you've forgotten, is same this email address:" %} {{ user.get_username }}
+
+{% trans "Thanks for using our site!" %}
+
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+
+{% endautoescape %}
+
+$body = '<html><head><title></title></head><body>';
+				    $body .= '<p><b>Witaj '.$_POST[name].' '.$_POST[surname].'</b></p>';
+				    $body .= '<p>Dziękujemy za kontakt z Achilles Polska. <br/>
+            Twoje zapytanie zostało pomyślnie zarejestrowane. Skontaktujemy się z Tobą w możliwie najkrótszym czasie.<br/><br/>
+            <a href="www.achilles.pl"><img src="http://uszlachetnia.nazwa.pl/images/stopka.png"/></a><br/>
+            <br/>
+            <span style="font-size:10pt;color: #A4A4A4" >-------------------------------------------------------------------------------------------<br/>
+            Achilles Polska Sp. z o.o. ul. M.Płażyńskiego 6, 83-020 Cedry Wielkie,<br/>
+            Tel.: +48 58 683 60 30, Fax.: +48 58 683 60 33<br/>
+            Spółka zarejestrowana w rejestrze przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy Gdańsk – Północ w Gdańsku VII Wydział Gospodarczy Krajowego Rejestru Sądowego.
+            <br/>KRS 0000000622. NIP: 583-27-15-203. Kapitał Zakładowy: 2.280.000 PLN</span>';
+            $body .= '</body></html>';

@@ -7,6 +7,7 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from django.contrib.auth import get_user_model
 
 
+# Quota is stored in database
 class SignUpForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
