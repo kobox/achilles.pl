@@ -35,6 +35,7 @@ class ProductDetailView(DetailView):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product_images'] = ProductImage.objects.filter(product=self.get_object())
         context['product_segment'] = self.get_object().categories.all()[0].segment
+        context['category'] = self.get_object().get_category()
         return context
 
 

@@ -66,6 +66,9 @@ class Category(MetaData):
     def __unicode__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("adoffice:detail", kwargs={"slug": self.slug})
+
 
 class PageClass(models.Model):
     name = models.CharField(max_length=255, default='homepage', blank=False, null=False)
@@ -147,8 +150,9 @@ class Product(MetaData):
             return prev[0]
             return False
 
-    #def get_category(self):
-
+    def get_category(self):
+        self._category = self.categories.all()[0]
+        return self._category
 
 
 class ProductImage(models.Model):

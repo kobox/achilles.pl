@@ -75,7 +75,7 @@
            <div class="product-navigation visible-lg hidden-xs hidden-sm hidden-md">
                     <div class="product-nav">
                        <a class="glyphicon glyphicon-chevron-left" href="{{ product.get_prev.get_absolute_url }}" id="product-prev"></a>
-                        <span class="glyphicon glyphicon-th-large"></span>
+                        <a class="glyphicon glyphicon-th-large" href="{{ category.get_absolute_url }}" title="{% trans 'Powrót do katalogu'%}"></a>
                         <!--<div class="product-gallery"></div>-->
                        <a class="glyphicon glyphicon-chevron-right" href="{{ product.get_next.get_absolute_url }}" id="product-next"></a>
                     </div>
