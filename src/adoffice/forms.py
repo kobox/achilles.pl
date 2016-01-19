@@ -16,6 +16,7 @@ class SignUpForm(forms.ModelForm):
             Submit('submit', 'Zamawiam',
                    css_class="btn btn-lg btn-primary btn-block"),
             )
+
     class Meta:
         model = Quota
         fields = ['email', 'full_name', 'company', 'phone', 'note', 'newsletter']

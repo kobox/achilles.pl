@@ -169,6 +169,7 @@ class ProductImage(models.Model):
 
 class Quota(models.Model):
     email = models.EmailField()
+    ref = models.CharField(max_length=254, default='')
     full_name = models.CharField(_(u'Imię i Nazwisko'), max_length=254, default='', blank=False, null=False)
     company = models.CharField(_(u'Firma'), max_length=254, default='', blank=True, null=True)
     phone = models.CharField(_(u'Telefon'), max_length=254, default='')

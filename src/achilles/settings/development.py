@@ -22,8 +22,8 @@ EMAIL_HOST = 'poczta.achilles.pl'
 EMAIL_HOST_USER = 'biuro@achilles.pl'
 EMAIL_HOST_PASSWORD = 'Achilles01!'
 DEFAULT_FROM_EMAIL = 'no-reply@achilles.pl'
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 # Show thumbnail generation errors
 THUMBNAIL_DEBUG = True
 

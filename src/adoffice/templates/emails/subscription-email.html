@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+{% load i18n %}{% autoescape off %}
+
+<body>
+<p><b>{% trans "Witaj" %} </b></p>
+<p>{% blocktrans %} Dziękujemy za zapisanie się do newslettera Achilles Polska.</br>
+    Będziesz otrzymywał/a od nas najświeższe informacje o nowych produktach, ofertach i promocjach, jak również praktyczne porady wykorzystania naszych produktów.
+</br></br>
+    Pozdrawiamy</br>
+    Zespół Achilles Polska
+{% endblocktrans %}</p>
+<a href="www.achilles.pl"><img src="http://uszlachetnia.nazwa.pl/images/stopka.png"/></a><br/><br/>
+<span style="font-size:10pt;color: #A4A4A4" >-------------------------------------------------------------------------------------------<br/>
+Achilles Polska Sp. z o.o. ul. M.Płażyńskiego 6, 83-020 Cedry Wielkie,<br/>
+Tel.: +48 58 683 60 30, Fax.: +48 58 683 60 33<br/>
+Spółka zarejestrowana w rejestrze przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy Gdańsk – Północ w Gdańsku VII Wydział Gospodarczy Krajowego Rejestru Sądowego.
+<br/>KRS 0000000622. NIP: 583-27-15-203. Kapitał Zakładowy: 2.280.000 PLN</span>
+</body></html>
+{% endautoescape %}

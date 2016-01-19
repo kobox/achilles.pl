@@ -2,6 +2,12 @@ from django.views import generic
 from adoffice.models import Category, Page
 from forms import SubscribeForm
 from django.shortcuts import redirect
+from django.template.loader import get_template
+from django.template import Context
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.utils.translation import ugettext, ugettext_lazy as _
+
 
 class HomePage(generic.TemplateView):
     template_name = "home.html"
@@ -9,7 +15,12 @@ class HomePage(generic.TemplateView):
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         if context["form"].is_valid():
-            print 'sending mail...'
+            email = context["form"].cleaned_data.get('email')
+            message = get_template(settings.BASE_DIR+'/adoffice/templates/emails/subscription-email.html').render(Context({'full_name': email}))
+            subject = _(u"Newsletter Achilles Polska")
+            msg = EmailMultiAlternatives(subject, '', 'no-replay@achilles.pl', [email])
+            msg.attach_alternative(message, "text/html")
+            msg.send()
             return redirect('/thanks/')
 
         return super(generic.TemplateView, self).render_to_response(context)
@@ -43,6 +54,7 @@ class ContactPage(generic.TemplateView):
         context['page'] = Page.objects.get(pageclass=3)
 
         return context
+
 
 class SubscriberPage(generic.TemplateView):
     template_name = "subscribed.html"
