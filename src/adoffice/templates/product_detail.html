@@ -24,7 +24,7 @@
             <tbody>
               <tr>
                 <td>
-                  Format:
+                  {% trans "Format" %}:
                 </td>
                 <td>
                   {{ product.format_size }}
@@ -32,7 +32,7 @@
               </tr>
               <tr>
                 <td>
-                  Rodzaj:
+                  {% trans "Rodzaj" %}:
                 </td>
                 <td>
                     {% for g in product.group_category.all  %}
@@ -43,7 +43,7 @@
               </tr>
             <tr>
                 <td>
-                Dodatki:
+                {% trans "Dodatki" %}:
                 </td>
                 <td>
                   {% for a in product.accessories.all %}
@@ -53,7 +53,7 @@
             </tr>
             <tr>
               <td>
-                Uszlachetnienie:&nbsp;
+                {%  trans "Uszlachetnienie" %}:&nbsp;
               </td>
               <td>
                {% for f in product.finishing.all  %}
