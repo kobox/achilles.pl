@@ -1,6 +1,7 @@
 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
 @import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300&subset=latin,latin-ext);
 
 html, body{
     height:100%;		/* For full height images */
@@ -327,6 +328,7 @@ body >.navbar-transparent {
 
 .text-page {
     padding: 50px 0;
+    font: 'Open Sans Condensed', sans-serif, 700;
 }
 .product-page {
     padding-top: 55px;

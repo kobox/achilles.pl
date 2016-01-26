@@ -138,14 +138,14 @@ class Product(MetaData):
 
     def get_next(self):
             self._category = self.categories.all()[0]
-            next = Product.objects.filter(id__gt=self.id, categories__in=[self._category])
+            next = Product.objects.filter(id__gt=self.id, categories__in=[self._category], active=True).order_by('id')
             if next:
                 return next[0]
                 return False
 
     def get_prev(self):
         self._category = self.categories.all()[0]
-        prev = Product.objects.filter(id__lt=self.id, categories__in=[self._category]).order_by('-id')
+        prev = Product.objects.filter(id__lt=self.id, categories__in=[self._category], active=True).order_by('-id')
         if prev:
             return prev[0]
             return False
