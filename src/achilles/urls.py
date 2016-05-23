@@ -9,7 +9,8 @@ import packaging.urls
 from . import views
 from filebrowser.sites import site
 from django.conf.urls.i18n import i18n_patterns
-
+from django.conf.urls import patterns
+from django.http import HttpResponse
 
 urlpatterns = i18n_patterns(
     url(r'^$', views.HomePage.as_view(), name='home'),
@@ -24,6 +25,8 @@ urlpatterns = i18n_patterns(
     url(r'^admin/filebrowser/', include(site.urls)),
     #url(r'^i18n/', include('django.conf.urls.i18n')),
 )
-
+#urlpatterns += patterns('', url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", content_type="text/plain")))
+#(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'))
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
